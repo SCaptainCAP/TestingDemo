@@ -1,11 +1,13 @@
 const express = require('express');
 const logger = require('morgan');
 const solve = require('./mathModule');
+const cors = require('cors')
 
 const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors())
 
 app.get('/', (req, res) => {
     try {
@@ -19,4 +21,4 @@ app.get('/', (req, res) => {
     }
 });
 
-app.listen(3000);
+app.listen(3001);
